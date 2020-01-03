@@ -1,0 +1,16 @@
+{
+	"tables": [
+		{
+			"title": "title 1",
+			"rows": 45,
+			"columns": 22,
+			"notes": "table 1 note"
+		},
+		{
+			"title": "title 2",
+			"rows": 7,
+			"columns": 8,
+			"notes": "table 2 note"
+		}
+	]
+}
