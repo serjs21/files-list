@@ -1,0 +1,31 @@
+<div class='list'>
+	<ul class="files">
+		<span class="title">Available Files</span>
+		
+		<li *ngFor="let file of list; let i = index" 
+			(click)="selectFile(i)" 
+			[class.selected]="i === selectedFile">
+				{{ file }}
+		</li>
+	</ul>
+
+	<ul *ngIf="selectedFile !== null; else placeholder" class="tables">
+		<span class="title">Tables in File</span>
+		
+		<li *ngFor="let table of tables; let i = index" 
+			(click)="selectTable(i)" 
+			[class.selected]="i === selectedTable">
+				{{ table.title }}
+		</li>
+	</ul>
+
+	<ul *ngIf="selectedTable !== null; else placeholder" class="data"> 
+		<span class="title">Info: {{ selectedTableTitle }}</span>
+
+		<li *ngFor="let item of selectedTableInfo">
+			<span class="item-title">{{ item[0] }}:</span> <span class="value">{{ objectToString(item[1])}}</span>
+		</li>
+	</ul>
+</div>
+
+<ng-template #placeholder><ul></ul></ng-template>
